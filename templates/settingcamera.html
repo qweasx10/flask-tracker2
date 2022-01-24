@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <title>GRK solution</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="headerWrap">
+                    <a href="/"><h1>GRK solution</h1></a>
+                    <div class="headerMenu">
+                        <a href="/">실시간 영상</a>
+                        <a href="/sub02">영상 조회</a>
+                        <a href="/sub" class="active">설정</a>
+                    </div>
+                    <div class="header_time">
+                        <p id="clock"></p>
+                        <a href="/" class="plus">홈<img src="/static/images/home.png" alt="home"></a>
+                        <a href="/sub">설정<img src="/static/images/setting.png" alt="camera setting"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="Wrap">
+                <div class="MainContent SubContent">
+                    <div class="SubBox">
+                        <div class="SettingBoxMenu">
+                            <p class="title">설정</p>
+                            <ul>
+                                <li class="addFile">
+                                    <a href="/sub">파일 추가</a>
+                                </li>
+                                <li class="addCamera active">
+                                    <a href="/sub04">카메라 추가</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="SettingBoxContent AddFile">
+                            <p class = title>카메라 추가</p>
+                            <div class="addContent">
+                                <div class="camerabox">
+                                    <p>추가할 카메라 정보를 입력하세요.</p>
+                                    <form action = "http://localhost:5000/sub03" method = "POST" enctype = "multipart/form-data">
+                                        <p class="cameraText">카메라 이름 : </p>
+                                        <input type="text" value="" class="cameraName"><br>
+                                        <p class="cameraText">카메라 위치 : </p>
+                                        <input type="text" value="" class="cameraName"><br>
+                                        <p class="cameraText">카메라 IP : </p>
+                                        <input type="text" value="" class="cameraName"><br>
+                                        <input class="nextsumit" type = "submit" value="다음" class="next"/>
+                                    </form>
+                                    <a href="/" class="back">취소</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+
+
+
+
+            var clockStart = setInterval(function() {
+                var today = new Date()
+                    var dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+                    var hh = addZero(today.getHours())
+                    var mm = addZero(today.getMinutes())
+                    var ss = addZero(today.getSeconds())
+                    var YY = today.getFullYear()
+                    var MM = today.getMonth()+1
+                    var DD = today.getDate()
+                    var dd = dayList[today.getDay()].toUpperCase()
+                    if (mm < 10){ mm = "0" + mm; }
+                    if (MM < 10){ MM = "0" + MM; }
+                    if (DD < 10){ DD = "0" + DD; }
+                    document.getElementById('clock').innerHTML = YY + "-" + MM + "-" + DD + " " + " " + hh + ":" + mm + ":" + ss;
+                    function addZero(num) {
+                    return (num < 10 ? '0'+num : ''+num)
+                }
+            }, 1000)
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+
