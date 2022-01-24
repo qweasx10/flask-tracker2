@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Open+Sans&family=Roboto&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a {
+    text-decoration:none;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+p, span, input {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/*font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
+html, body {width:100%; height:100%; overflow:hidden;}
+
+div#container {width:100%;  height:100%; background:#423F3E;}
+
+div#header { width:100%; height:50px; background:#171010;}
+div#header div.headerWrap {width:1800px; position:relative; margin: 0 auto;}
+div#header div.headerWrap h1 {color:#aaa; font-family: 'Roboto', sans-serif; display:inline-block; float:left; margin-top:16px; font-size:18px; line-height:18px; height:18px; font-weight:600;}
+div#header div.headerWrap div.header_time {display:inline-block; float:right; text-align:right; margin-top:17px; height:16px;}
+div#header div.headerWrap div.header_time p {color:#aaa; font-family: 'Roboto', sans-serif; font-size:14px; line-height:16px; float:left; margin-right:20px; position:relative; top:1px;}
+div#header div.headerWrap div.header_time:after {content:''; display:inline-block; width:1px; height:10px; background:#aaa; position:relative; top:-1px;}
+div#header div.headerWrap div.header_time a:link, div#header div.headerWrap div.header_time a:active, div#header div.headerWrap div.header_time a:visited { position:relative; top:-6px; padding:7px 10px; background:#423F3E; transition:0.2s; margin-left:20px;font-weight:500; display:inline-block; float:right; font-size:14px; color:#aaa; border-radius:5px;}
+div#header div.headerWrap div.header_time a:hover { font-weight:bold; filter: drop-shadow(3px 4px 3px #000); transition:0.2s;}
+div#header div.headerWrap div.header_time a img {width:12px; height:12px; vertical-align:top; margin-left:10px; position:relative; top:2px;}
+div.headerMenu { height:50px; display:inline-block; margin-left:970px;}
+div.headerMenu a:link, div.headerMenu a:active, div.headerMenu a:visited { display:inline-block; float:left; height:50px; width:130px; line-height:50px; background:#2B2B2B; text-align:center; font-size:14px; color:#aaa;margin-left:1px; transition:0.2s;}
+div.headerMenu a:hover {font-weight:bold; background:#423F3E;}
+div.headerMenu a.active {font-weight:bold; background:#423F3E;}
+
+
+div#Wrap {width:1800px; height:100%; margin:0 auto;}
+div#Wrap div.MainContent {margin-top:10px; margin-bottom:10px; height:1010px;}
+
+
+div#Wrap div.MainContent div.LeftBox {display:inline-block; float:left; width:500px; margin-right:10px; margin-bottom:10px; }
+
+div#Wrap div.MainContent div.LeftBox div.CameraList {width:440px; padding: 30px; background:#171010; height:368.5px; margin-bottom:10px; border-radius: 10px;}
+div#Wrap div.MainContent div.LeftBox div.EventList {width:440px; padding: 30px; background:#171010; height:368.5px; margin-bottom:10px; border-radius: 10px;}
+
+
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Title p, div.EventList_Title p {font-size:16px; line-height:16px; color:#aaa; font-weight:bold;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Title p span { font-size:14px; color:#777; margin-left:10px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List { overflow:auto; margin-top:20px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List::-webkit-scrollbar {width: 10px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List::-webkit-scrollbar-thumb {background-color: #777; border-radius:10px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List::-webkit-scrollbar-track {background-color: #2B2B2B; border-radius: 10px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul { height:331.5px; width:420px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li { margin-bottom:15px;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a:visited, div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box ul li a:active,
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a:link{ display:inline-block; font-size:14px; line-height:14px; color:#777; font-weight:bold; transition:0.2s;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a:hover { color:#999;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a:hover p { filter: drop-shadow(3px 4px 3px #111); transition:0.2s;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a p { position:relative;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a p span:nth-child(1) { margin-right:7px; display:inline-block; width:10px; height:10px; line-height:14px; border-radius:100%;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a p span:nth-child(1).on { background:#81B214;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a p span:nth-child(1).off { background:#FF7600;}
+div#Wrap div.MainContent div.LeftBox div.CameraList div.CameraList_Box div.CameraList_List ul li a p span.camera { text-overflow: ellipsis; width:370px;overflow: hidden; white-space: nowrap; display:inline-block;}
+
+
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach { margin-top:20px;}
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach select {width: 90px; font-family: inherit; border:none;
+background:#423F3E url('../images/arrow.png') no-repeat 90% 50%; border-radius: 0px;-webkit-appearance: none;-moz-appearance: none;appearance: none; color:#aaa; padding:5px 10px;
+font-family: 'Noto Sans KR', sans-serif; cursor:pointer; border-radius:5px;}
+
+
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach {width:440px;}
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach a:visited, div.EventList_Serach a:link, div.EventList_Serach a:active
+{ position:relative; top:-6px; padding:7px 10px; background:#423F3E; transition:0.2s; margin-left:20px;font-weight:500; display:inline-block; float:right; font-size:14px; color:#aaa; border-radius:5px;}
+
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach a:hover { font-weight:bold; filter: drop-shadow(3px 4px 3px #000); transition:0.2s;}
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach div.EventDate { margin-top:10px;}
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach div.EventDate span { color:#aaa; font-size:14px; line-height:14px; font-weight:bold;}
+div#Wrap div.MainContent div.LeftBox div.EventList div.EventList_Serach div.EventDate input { width:202px; font-size:14px; line-height:28px; font-family: 'Roboto', sans-serif;
+height:28px; border:none;}
+input[type="date"]::-webkit-clear-button, input[type="date"]::-webkit-inner-spin-button { display: none; }
+input[type="date"]::-webkit-calendar-picker-indicator {  background:url('../images/arrow.png') no-repeat 50% 50%; }
+input[type="date"] {  background: #423F3E; color: #aaa; padding-left:8px; border-radius:5px;}
+
+div.EventList_List {overflow:auto; height:250.5px; width:440px; margin-top:20px;}
+div.EventList_List::-webkit-scrollbar {width: 10px;}
+div.EventList_List::-webkit-scrollbar-thumb {background-color: #777; border-radius:10px;}
+div.EventList_List::-webkit-scrollbar-track {background-color: #2B2B2B; border-radius: 10px;}
+div.EventList_List ul li { margin-bottom:15px; width:420px;}
+div.EventList_List ul li a:link, div.EventList_List ul li a:active,div.EventList_List ul li a:visited { display:inline-block; font-size:14px; line-height:14px; color:#777; font-weight:bold; transition:0.2s;}
+div.EventList_List ul li a:hover{color:#999;}
+div.EventList_List ul li a { width:99%;}
+div.EventList_List ul li a p {width:99%;}
+div.EventList_List ul li a:hover p{ filter: drop-shadow(3px 4px 3px #111); transition:0.2s;}
+div.EventList_List ul li a p span:nth-child(1){margin-right:7px; display:inline-block; width:10px; height:10px; line-height:14px; border-radius:100%;}
+div.EventList_List ul li a p span.Roam_color { background:#527318;}
+div.EventList_List ul li a p span.Invad_color {background:#FEB72B;}
+div.EventList_List ul li a p span.Abandon_color {background:#899857;}
+div.EventList_List ul li a p span:nth-child(2),div.EventList_List ul li a p span:nth-child(3) { margin-right:10px;}
+div.EventList_List ul li a p span:nth-child(3) {text-overflow: ellipsis; width:200px;overflow: hidden; white-space: nowrap; display:inline-block;}
+div.EventList_List ul li a p span:nth-child(4) { float:right;}
+div.EventList_List ul li a p.Roam span:nth-child(2) {color:#527318;}
+div.EventList_List ul li a p.Invad span:nth-child(2) {color:#FEB72B;}
+div.EventList_List ul li a p.Abandon span:nth-child(2) {color:#899857;}
+
+
+
+div#Wrap div.MainContent div.RightBox {display:inline-block; float:left; width:1290px; margin-bottom:10px;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title {width:1290; height:50px; }
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul { height:50px; }
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li {float:left; margin-right:5px; position:relative; transition:0.2s;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a {display:inline-block; float:right; font-size:14px; line-height:20px; }
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a.tab {background:#171010; display:inline-block; float:left; line-height:20px; width:150px; font-size:14px; color:#aaa; font-weight:bold; padding:15px; border-radius: 10px 10px 0px 0px;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a.tab p{text-overflow: ellipsis; width:120px;overflow: hidden; white-space: nowrap;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li:last-child {margin-right:0;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a.close {position:absolute; top:16px; right:15px; transition:0.2s;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a.close img { width:20px; height:20px; vertical-align:middle;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li.active { top:0px;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li.active a.tab { background:#2B2B2B; padding-bottom:15px;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li.deactivate {top:10px;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li.deactivate a.tab {padding-bottom:5px; transition:0.2s;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a:visited, div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a:active,
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a:link {color:#aaa;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li.active a.tab:hover { background:#2B2B2B;}
+div#Wrap div.MainContent div.RightBox div.RightBox_Title ul li a.close:hover { background:none;transform: rotate(45deg); transition:0.2;}
+div#Wrap div.MainContent div.RightBox div.VideoBox {width:1230px; padding:20px 30px 30px 30px;  height:742px; border-radius: 10px; background:#2B2B2B; display:block;}
+div#Wrap div.MainContent div.RightBox div.VideoBox div.row { width:1230px; height:691.875px;}
+div#Wrap div.MainContent div.RightBox div.VideoBox div.row div.StreamingVideo {width:1230px; height:691.875px; background:#eee;}
+div#Wrap div.MainContent div.RightBox div.VideoBox div.row div.StreamingVideo img {width:1230px; height:691.875px; vertical-align:middle;}
+div#Wrap div.MainContent div.RightBox div.VideoBox div.VideoBoxInfo {height:20px; margin-bottom:20px;}
+div#Wrap div.MainContent div.RightBox div.VideoBox div.VideoBoxInfo > p {color:#aaa; display:inline-block; font-size:16px; height16px; line-height:20px; font-weight:bold; float:left;}
+
+
+
+div.RightBox_Info {height:45px; margin-bottom:10px; background:#171010; padding:10px 30px; border-radius:10px;}
+div.RightBox_Info p {font-size:16px; line-height:45px; display:inline-block; font-weight:bold; color:#aaa; float:left;}
+div.RightBox_Info p.Name {width:910px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; margin-right:10px; }
+div.RightBox_Info p.Location { width:300px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding-left:10px; }
+div.RightBox_Info p.Location:before {content:''; display:inline-block; height:12px; background:#aaa; width:1px; position:relative;  left:-10px;}
+
+
+
+
+
+div#Wrap div.SubContent div.SubBox {width:1740px;  height:807px;  }
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu { width:360px; background:#171010; display:inline-block; height:807px; padding:30px 0px; border-radius: 10px 10px 10px 10px; float:left; margin-right:10px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxContent { width:1310px; background:#2B2B2B; display:inline-block; height:807px; padding:30px; border-radius: 10px 10px 10px 10px; float:right;}
+div#Wrap div.SubContent div.SubBox div p.title {font-size:16px; line-height:16px; color:#aaa; font-weight:bold;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu p.title {padding-left:30px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul { margin-top:50px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li {width:360px; height:50px; margin-bottom:1px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li a:link, div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li a:active, div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li a:visited {display:inline-block; width:300px; padding:0px 30px; height:50px; transition:0.2s; font-size:14px; color:#aaa; vertical-align:middle; line-height:50px; background:#171010 url('../images/arrow_02.png') no-repeat 310px; background-size:0px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li a:hover { font-weight:bold;  transition:0.2s; background:#2B2B2B url('../images/arrow_02.png') no-repeat 320px; background-size:10px;}
+div#Wrap div.SubContent div.SubBox div.SettingBoxMenu ul li.active a { font-weight:bold; background:#2B2B2B url('../images/arrow_02.png') no-repeat 320px; background-size:10px;}
+
+
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent { margin-top:50px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent select {width: 150px; font-family: inherit; border:none;background:#171010 url('../images/arrow.png') no-repeat 90% 50%; border-radius: 0px;-webkit-appearance: none;-moz-appearance: none;appearance: none; color:#aaa; padding:9px 10px;font-family: 'Noto Sans KR', sans-serif; cursor:pointer; border-radius:5px; font-size:14px; position:relative; top:1px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.filebox {text-align:center; height:200px; position:relative; margin-top:100px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.filebox input.next { background:#171010; text-align:center; width:100px; height:40px; line-height:30px; border:none; border-radius:5px; color:#aaa; font-size:16px; vertical-align:top; cursor:pointer; position:absolute; right:550px; top:100px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.filebox a.back:visited, div.filebox a.back:active, div.filebox a.back:hover, div.filebox a.back:link {display:inline-block; background:#171010; text-align:center; width:100px; height:40px; line-height:40px; border:none; border-radius:5px; color:#aaa; font-size:16px; vertical-align:top; cursor:pointer; position:absolute; position:absolute; left:550px; top:100px;}
+
+
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox {padding:0px 145px; margin-top:20px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox img {width:800px; height:450px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox > div {width:800px; height:450px; margin-left:110px; position:relative;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox > div div.ImagePoint {width:10px; height:10px; border-radius:10px; background:#EC0101; position:absolute; top:0; left:0;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox p.text {font-size:16px; font-weight:bold; color:#aaa; height:40px; line-height:40px; padding-left:20px; display:inline-block; width:780px; margin:15px 0px 15px 110px; background:#171010; border-radius:5px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBox div.ImageBoxInfo {position:relative; height:71px; background:#171010; border-radius:8px; padding:20px; width:760px; margin:20px 0 0 110px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo input#clearbtn { font-size:14px; border:none; background:#2B2B2B; text-align:center; width:100px;height:40px; line-height:30px; border-radius:5px; color:#aaa; vertical-align:top; cursor:pointer; margin-top:10px; position:absolute; right:20px; top:10px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo p.XY {font-size:0px; height:0; width:0; display:inline-block;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo p.pointText { font-size:14px; color:#aaa; display:inline-block; width:100px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo p.pointt {width:5px; text-align:center;s}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo div.startPoint input { border:none; background:#aaa; border-radius:5px; height:25px;  padding-left:10px; width:200px;}
+div#Wrap div.SubContent div.SubBox div.AddFile div.addContent div.ImagePosition div.ImageBoxInfo div.endPoint input { border:none; background:#aaa; border-radius:5px; height:25px; padding-left:10px;  width:200px;}
+
+
+div.camerabox {  border-radius:10px; height:300px; text-align:center; position:relative; padding:30px;}
+div.camerabox p.cameraText {display:inline-block; font-size:16px; color:#aaa; font-weight:bold; width:90px; margin-bottom:30px;}
+div.camerabox input {background:#aaa; height:33px; border:none; border-radius:5px; width:655px; padding-left:10px;}
+div.camerabox input.nextsumit { font-size:14px; border:none; background:#171010; text-align:center; width:100px;height:40px; line-height:30px; border-radius:5px; color:#aaa; vertical-align:top; cursor:pointer; margin-top:10px; position:absolute; right:550px; bottom:0px;}
+div.camerabox a.back:visited, div.camerabox a.back:active, div.camerabox a.back:link, div.camerabox a.back:hover {display:inline-block; background:#171010; text-align:center; width:100px; height:40px; line-height:40px; border:none; border-radius:5px; color:#aaa; font-size:16px; vertical-align:top; cursor:pointer; position:absolute; position:absolute; left:550px; bottom:0px;}
+div.camerabox > p { text-align:left; font-size:16px; font-weight:bold; color:#aaa; height:40px; line-height:40px; padding-left:20px; display:inline-block; width:780px; margin:0px 0px 30px 0px; background:#171010; border-radius:5px;}
+
+div.ImageBoxInfo a.back:visited, div.ImageBoxInfo a.back:active, div.ImageBoxInfo a.back:link, div.ImageBoxInfo a.back:hover {display:inline-block; background:#171010; text-align:center; width:100px; height:40px; line-height:40px; border:none; border-radius:5px; color:#aaa; font-size:16px; vertical-align:top; cursor:pointer; position:absolute; position:absolute; left:295px; bottom:-60px;}
+div.ImageBoxInfo input.next{display:inline-block; background:#171010; text-align:center; width:100px; height:40px; line-height:30px; border:none; border-radius:5px; color:#aaa; font-size:16px; vertical-align:top; cursor:pointer; position:absolute; position:absolute; right:295px; bottom:-60px;px;}
+
+
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+.filebox label {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #aaa;
+  vertical-align: middle;
+  background-color: #171010;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size:14px;
+  font-weight:bold;
+  height:15px;
+  line-height:15px;
+}
+
+/* named upload */
+.filebox .upload-name {
+  display: inline-block;
+  height: 33px;
+  font-size:14px;
+  padding: 0 10px;
+  vertical-align: middle;
+  background-color: #aaa;
+  border-radius: 5px;
+  color:#171010;
+  border:none;
+  font-size:14px;
+  width:740px;
+}
