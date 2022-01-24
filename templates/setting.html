@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <title>GRK solution</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="headerWrap">
+                    <a href="/"><h1>GRK solution</h1></a>
+                    <div class="headerMenu">
+                        <a href="/">실시간 영상</a>
+                        <a href="/sub02">영상 조회</a>
+                        <a href="/sub" class="active">설정</a>
+                    </div>
+                    <div class="header_time">
+                        <p id="clock"></p>
+                        <a href="/" class="plus">홈<img src="/static/images/home.png" alt="home"></a>
+                        <a href="/sub">설정<img src="/static/images/setting.png" alt="camera setting"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="Wrap">
+                <div class="MainContent SubContent">
+                    <div class="SubBox">
+                        <div class="SettingBoxMenu">
+                            <p class="title">설정</p>
+                            <ul>
+                                <li class="addFile active">
+                                    <a href="/sub">파일 추가</a>
+                                </li>
+                                <li class="addCamera">
+                                    <a href="/sub04">카메라 추가</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="SettingBoxContent AddFile">
+                            <p class = title>파일 추가</p>
+                            <div class="addContent">
+                                <div class="filebox">
+                                    <form action = "http://localhost:5000/sub03" method = "POST" enctype = "multipart/form-data">
+                                        <label for="file">파일 선택</label>
+                                        <input type="file" id="file" name = "file" accept="video/mp4,video/mvk,video/x-m4v,video/*">
+                                        <input type="text" class="upload-name" value="동영상 파일을 선택하세요.">
+                                        <input type = "submit" value="다음" class="next"/>
+                                    </form>
+                                    <a href="/" class="back">취소</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+
+
+
+
+            var clockStart = setInterval(function() {
+                var today = new Date()
+                    var dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+                    var hh = addZero(today.getHours())
+                    var mm = addZero(today.getMinutes())
+                    var ss = addZero(today.getSeconds())
+                    var YY = today.getFullYear()
+                    var MM = today.getMonth()+1
+                    var DD = today.getDate()
+                    var dd = dayList[today.getDay()].toUpperCase()
+                    if (mm < 10){ mm = "0" + mm; }
+                    if (MM < 10){ MM = "0" + MM; }
+                    if (DD < 10){ DD = "0" + DD; }
+                    document.getElementById('clock').innerHTML = YY + "-" + MM + "-" + DD + " " + " " + hh + ":" + mm + ":" + ss;
+                    function addZero(num) {
+                    return (num < 10 ? '0'+num : ''+num)
+                }
+            }, 1000)
+
+            var inputFile = document.getElementById("file");
+            var video = document.getElementById("video");
+            inputFile.addEventListener("change", function(){
+                var fileName = $("#file").val();
+                $(".upload-name").val(fileName);
+                var file = inputFile.files[0];
+                var videourl = URL.createObjectURL(file);
+                $(".videoUrl").val(videourl);
+            })
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+
