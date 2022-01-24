@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <title>GRK solution</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="headerWrap">
+                    <a href="/"><h1>GRK solution</h1></a>
+                    <div class="headerMenu">
+                        <a href="/">실시간 영상</a>
+                        <a href="/sub02">영상 조회</a>
+                        <a href="/sub" class="active">설정</a>
+                    </div>
+                    <div class="header_time">
+                        <p id="clock"></p>
+                        <a href="/" class="plus">홈<img src="/static/images/home.png" alt="home"></a>
+                        <a href="/sub">설정<img src="/static/images/setting.png" alt="camera setting"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="Wrap">
+                <div class="MainContent SubContent">
+                    <div class="SubBox">
+                        <div class="SettingBoxMenu">
+                            <p class="title">설정</p>
+                            <ul>
+                                <li class="addFile active">
+                                    <a href="/sub">파일 추가</a>
+                                </li>
+                                <li class="addCamera">
+                                    <a href="/sub04">카메라 추가</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="SettingBoxContent AddFile">
+                            <p class = title>파일 추가</p>
+                            <div class="addContent">
+                                <div class="ImagePosition">
+                                    <div class="ImageBox">
+                                        <p class="text">이미지에서 기준영역의 시작좌표와 끝좌표를 선택하세요.</p>
+                                        <div id="my_div">
+                                            <img src="{{ url_for('image_feed')}}">
+                                            <div id="ImageOffsetBox">
+
+                                            </div>
+                                        </div>
+                                        <div class="ImageBoxInfo">
+                                            <form>
+                                                <div>
+                                                </div>
+                                                <div class="startPoint">
+                                                    <p class="pointText">시작좌표(X,Y)</p>
+                                                    <input id="startpointX" type="text" name="startpointX" value="">
+                                                    <p class="pointText pointt">,</p>
+                                                    <input id="startpointY" type="text" name="startpointY" value="">
+                                                </div>
+                                                <br>
+                                                <div class="endPoint">
+                                                    <p class="pointText">끝좌표(X,Y)</p>
+                                                    <input id="endpointX" type="text" name="endpointX" value="">
+                                                    <p class="pointText pointt">,</p>
+                                                    <input id="endpointY" type="text" name="endpointY" value="">
+                                                </div>
+                                                <input id='clearbtn' type='button' value='다시 선택' />
+                                                <input type = "submit" value="확인" class="next"/>
+                                                <div id='result'>
+                                                </div>
+                                            </form>
+                                            <a href="/" class="back">취소</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+
+
+
+
+            var clockStart = setInterval(function() {
+                var today = new Date()
+                    var dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+                    var hh = addZero(today.getHours())
+                    var mm = addZero(today.getMinutes())
+                    var ss = addZero(today.getSeconds())
+                    var YY = today.getFullYear()
+                    var MM = today.getMonth()+1
+                    var DD = today.getDate()
+                    var dd = dayList[today.getDay()].toUpperCase()
+                    if (mm < 10){ mm = "0" + mm; }
+                    if (MM < 10){ MM = "0" + MM; }
+                    if (DD < 10){ DD = "0" + DD; }
+                    document.getElementById('clock').innerHTML = YY + "-" + MM + "-" + DD + " " + " " + hh + ":" + mm + ":" + ss;
+                    function addZero(num) {
+                    return (num < 10 ? '0'+num : ''+num)
+                }
+            }, 1000)
+
+
+            const div = document.getElementById('my_div');
+            const clearbtn = document.getElementById('clearbtn');
+            const result = document.getElementById('result');
+            const box = document.getElementById('ImageOffsetBox');
+
+            const startpointX = document.getElementById('startpointX');
+            const startpointY = document.getElementById('startpointY');
+            const endpointX = document.getElementById('endpointX');
+            const endpointY = document.getElementById('endpointY');
+
+            div.addEventListener('click', (e) => {
+                const point = document.getElementsByClassName('ImagePoint').length;
+                if (point < 1){
+                    result.innerHTML += `<div><p class="XY" id="startpointPX">${e.offsetX}</p><p class="XY" id="startpointPY">${e.offsetY}</p></div>`;
+                    var startpointPX = document.getElementById('startpointPX').innerText;
+                    startpointX.value = startpointPX*1.6
+                    var startpointPY = document.getElementById('startpointPY').innerText;
+                    startpointY.value = startpointPY*1.6
+                    box.innerHTML += `<div style="top:${e.offsetY}px; left:${e.offsetX}px" id="ImagePoint${e.offsetX}${e.offsetY}" class="ImagePoint"></div>`;
+                }
+                else if (point < 2) {
+                    result.innerHTML += `<div><p class="XY" id="endpointPX">${e.offsetX}</p><p class="XY" id="endpointPY">${e.offsetY}</p></div>`;
+                    var endpointPX = document.getElementById('endpointPX').innerText;
+                    endpointX.value = endpointPX*1.6
+                    var endpointPY = document.getElementById('endpointPY').innerText;
+                    endpointY.value = endpointPY*1.6
+                    box.innerHTML += `<div style="top:${e.offsetY}px; left:${e.offsetX}px" id="ImagePoint${e.offsetX}${e.offsetY}" class="ImagePoint"></div>`;
+                }
+                else {
+                    alert("좌표는 2개까지 선택 가능합니다.");
+                }
+            });
+
+            clearbtn.addEventListener('click', (e) => {
+              result.innerHTML= '';
+              box.innerHTML = '';
+              startpointX.value = ""
+              startpointY.value = ""
+              endpointX.value = ""
+              endpointY.value = ""
+            });
+
+
+        </script>
+
+    </body>
+</html>
+
+
+
