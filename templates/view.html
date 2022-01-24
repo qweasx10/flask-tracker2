@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <title>GRK solution</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="headerWrap">
+                    <a href="/"><h1>GRK solution</h1></a>
+                    <div class="headerMenu">
+                        <a href="/">실시간 영상</a>
+                        <a href="/sub02" class="active">영상 조회</a>
+                        <a href="/sub">설정</a>
+                    </div>
+                    <div class="header_time">
+                        <p id="clock"></p>
+                        <a href="/" class="plus">홈<img src="/static/images/home.png" alt="home"></a>
+                        <a href="/sub">설정<img src="/static/images/setting.png" alt="camera setting"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="Wrap">
+                <div class="MainContent">
+                    <div class="LeftBox">
+                        <div class="CameraList">
+                            <div class="CameraList_Title">
+                                <p>카메라/파일</p>
+                            </div>
+                            <div class="CameraList_Box">
+                                <div class="CameraList_List MainList">
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="off"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p><span class="on"></span><span class="camera">카메라이름카메라이름카메라이름카메라이름</span></p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="EventList">
+                            <div class="EventList_Title">
+                                <p>감지내역</p>
+                            </div>
+                            <div class="EventList_Serach">
+                                <select name="EventSelect">
+                                        <option value="감지내역">감지내역</option>
+                                        <option value="배회">배회</option>
+                                        <option value="침입">침입</option>
+                                        <option value="유기">유기</option>
+                                </select>
+                                <a href="#none">검색</a>
+                                <div class="EventDate">
+                                        <form name="EventDate" action="" method="post">
+                                            <input type='date' name='EventDate' value='2021-03-30'/>
+                                            <span>~</span>
+                                            <input type='date' name='EventDate' value='2021-03-30'/>
+                                        </form>
+                                </div>
+                            </div>
+                            <div class="EventList_Box">
+                                <div class="EventList_List MainList">
+                                    <ul>
+                                        <li onclick="action_add()">
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01카메라 01카메라 01카메라 01카메라 01카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Roam">
+                                                    <span class="Roam_color"></span>
+                                                    <span class="EventRoam">배회</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Invad">
+                                                    <span class="Invad_color"></span>
+                                                    <span class="EventInvad">침입</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <p class="Abandon">
+                                                    <span class="Abandon_color"></span>
+                                                    <span class="EventAbandon">유기</span>
+                                                    <span class="Camera">카메라 01</span>
+                                                    <span class="Time">2021.07.09&nbsp;08:00:38</span>
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="RightBox">
+                        <div class="RightBox_Info">
+                            <p class="Name">카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름카메라이름</p>
+                            <p class="Location">양재교육장</p>
+                        </div>
+                        <div class="VideoBox container active">
+                            <div class="VideoBoxInfo">
+                                <p>감지내역/파일</p>
+                            </div>
+                            <div class="row">
+                                <div class="StreamingVideo col-lg-8 offset-lg-2">
+                                    <!--video src="" controls muted></video-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            var clockStart = setInterval(function() {
+                var today = new Date()
+                    var dayList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+                    var hh = addZero(today.getHours())
+                    var mm = addZero(today.getMinutes())
+                    var ss = addZero(today.getSeconds())
+                    var YY = today.getFullYear()
+                    var MM = today.getMonth()+1
+                    var DD = today.getDate()
+                    var dd = dayList[today.getDay()].toUpperCase()
+                    if (MM < 10){ MM = "0" + MM; }
+                    if (DD < 10){ DD = "0" + DD; }
+                    document.getElementById('clock').innerHTML = YY + "-" + MM + "-" + DD + " " + " " + hh + ":" + mm + ":" + ss;
+                    function addZero(num) {
+                    return (num < 10 ? '0'+num : ''+num)
+                }
+            }, 1000)
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
+
